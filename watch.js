@@ -1,30 +1,57 @@
 (function(){
   'use strict';
 
-var time = setInterval(clock, 1000);
+  function displayHexClock() {
+      // Get the current time
+      var clock = new Date(),
+          h = clock.getHours(),
+          m = clock.getMinutes(),
+          s = clock.getSeconds();
 
-function clock() {
-  function dateToContent(date) {
-    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
-  }
-  var date = new Date();
-  document.body.innerHTML = dateToContent(date);
+      // Make sure that hours, minutes, and seconds are all 2 digits each
+      if(h.toString().length < 2) { h = '0' + h; }
+      if(m.toString().length < 2) { m = '0' + m; }
+      if(s.toString().length < 2) { s = '0' + s; }
 
-}
+      var time = h + ':' + m + ':' + s;
 
-  //Background color
-// var wallpaper = setInterval (function () {
-//   setColor() }, 1000);
+      // Change the background color to the hex color of the current time
+
+
+      // Update the current time
+      document.getElementById('time').innerHTML = time;
+
+      // Update the current hex value
+
+    }
+
+
+    window.onload = function() {
+      // Update the clock every second
+      displayHexClock();
+      setInterval(displayHexClock, 1000);
+    };
+
+// Toggle backgroundColor HELP
+// Use onClick for this one?
+//     toggle_color("#61beb3", "#90a2c6", 4000, 2000);
 //
-// function setColor() {
+//         function toggle_color(color1, color2, cycle_time, wait_time) {
 //
-//   }
+//            setInterval(function first_color() {
+//                document.body.style.backgroundColor = color1;
+//                setTimeout(change_color, wait_time);
+//            }, cycle_time);
 //
-//
-//   });
-// }
+//            function change_color() {
+//                document.body.style.backgroundColor = color2;
+//            }
+
 
 }());
+
+
+
 
 // DEMOdocument.getElementById('title').textContent='New Title';
 //

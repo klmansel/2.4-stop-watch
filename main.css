@@ -1,20 +1,45 @@
-body {
-  background-color: teal;
-  color: white;
-  font-size: 80px;
-  text-align: center;
-  margin-top: 25%;
-}
+/*
 
 #myClock {
+    background-color: teal;
+    color: white;
     position: relative;
     height: 100px;
     top: 45%;
-    margin-top: -50px;
+    margin-top: 25%;
     text-align: center;
 }
 
 #time {
     font-size: 100px;
     font-family: 'Kashuan Script', sans-serif;
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #eee;
 }
+
+html, body {
+    background-color: teal;
+    height: 100%;
+}
+
+#hexClock {
+  display: inline-block;
+    height: 100px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#time {
+    font-size: 100px;
+    font-family: 'Kashuan Script', sans-serif;
+    text-align: center;
+}
+
+#hexColor {
+    margin-top: 50px;
+    font-family: 'Kashuan Script', sans-serif;
+    text-align: center;
